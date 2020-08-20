@@ -1,0 +1,25 @@
+service: lambda-keepalive
+plugins:
+  - serverless-dotenv-plugin
+
+custom:
+  dotenv:
+    logging: false
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  role: arn:aws:iam::685890571322:role/lambda-alllow-ses-sendemail
+  region: ${env:REGION}
+
+
+  
+functions:
+  keepalive:
+    handler: keepalive.handler
+    events:
+      - schedule:
+          name: every-minute
+          description: Run every minute
+          rate: rate(1 minute)
+          enabled: false

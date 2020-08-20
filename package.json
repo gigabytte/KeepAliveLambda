@@ -1,0 +1,16 @@
+{
+  "name": "nodefunctions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "locally": "node -e \"console.log(require('./handler.js').handler({}));\""
+  },
+  "author": "Greg Brooks",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.734.0",
+    "axios": "^0.19.2",
+    "serverless-dotenv-plugin": "^3.0.0"
+  }
+}
